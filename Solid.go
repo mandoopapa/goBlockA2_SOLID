@@ -33,72 +33,72 @@ func (s *Platform) String() string {
 //////////////////인터페이스 1,2를 활용///////////////////////
 
 // 1번
-type FirstTech struct {
+type Tech_01 struct {
 }
 
-func (j *FirstTech) Validating() Person {
-	return &DevelopedFirstTech{}
+func (j *Tech_01) Validating() Person {
+	return &DevelopedTech_01{}
 }
 
-type DevelopedFirstTech struct {
+type DevelopedTech_01 struct {
 }
 
-func (s *DevelopedFirstTech) String() string {
+func (s *DevelopedTech_01) String() string {
 	return " + 1번"
 }
 
 // 2번이 핵심기술이라면 소문자로해서 내부 기능으로 돌리기.(개방폐쇄원칙)
-type secondTech struct {
+type tech_02 struct {
 }
 
-func (j *secondTech) Validating() Person {
-	return &DevelopedsecondTech{}
+func (j *tech_02) Validating() Person {
+	return &Developedtech_02{}
 }
 
-type DevelopedsecondTech struct {
+type Developedtech_02 struct {
 }
 
-func (s *DevelopedsecondTech) String() string {
+func (s *Developedtech_02) String() string {
 	return " + 2번"
 }
 
 // 3번
-type ThirdTech struct {
+type Tech_03 struct {
 }
 
-func (j *ThirdTech) Validating() Person {
-	return &DevelopedThirdTech{}
+func (j *Tech_03) Validating() Person {
+	return &DevelopedTech_03{}
 }
 
-type DevelopedThirdTech struct {
+type DevelopedTech_03 struct {
 }
 
-func (s *DevelopedThirdTech) String() string {
+func (s *DevelopedTech_03) String() string {
 	return " + 3번"
 }
 
 // 4번
-type FourthTech struct {
+type Tech_04 struct {
 }
 
-func (j *FourthTech) Validating() Person {
-	return &DevelopedFourthTech{}
+func (j *Tech_04) Validating() Person {
+	return &DevelopedTech_04{}
 }
 
-type DevelopedFourthTech struct {
+type DevelopedTech_04 struct {
 }
 
-func (s *DevelopedFourthTech) String() string {
+func (s *DevelopedTech_04) String() string {
 	return " + 4번"
 }
 
 func main() {
 	Platform := &Platform{}
 
-	Technology01 := &FirstTech{}
-	Technology02 := &ThirdTech{}
-	Technology03 := &secondTech{}
-	Technology04 := &FourthTech{}
+	Technology01 := &Tech_01{}
+	Technology02 := &Tech_03{}
+	Technology03 := &tech_02{}
+	Technology04 := &Tech_04{}
 
 	Platform.Item(Technology01)
 	Platform.Item(Technology02)
