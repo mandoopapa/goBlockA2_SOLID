@@ -27,7 +27,7 @@ func (s *Platform) Item(Technology Technology) {
 }
 
 func (s *Platform) String() string {
-	return "\t [[ 기술거래가능 목 록 ]]\n " + s.val
+	return "\t [[ 기술거래가능 목록 ]]\n " + s.val
 }
 
 //////////////////인터페이스 1,2를 활용///////////////////////
@@ -44,7 +44,7 @@ type DevelopedTech_01 struct {
 }
 
 func (s *DevelopedTech_01) String() string {
-	return "1. DID 비대키기술을 활용한 신원증명\n "
+	return "1. DID 비대칭키기술을 활용한 신원증"
 }
 
 // 2번이 핵심기술이라면 소문자로해서 내부 기능으로 돌리기.(개방폐쇄원칙)
@@ -59,7 +59,7 @@ type Developedtech_02 struct {
 }
 
 func (s *Developedtech_02) String() string {
-	return "2. Blinded Technology#1\n "
+	return "2. Blinded Technology#1"
 }
 
 // 3번
@@ -74,7 +74,7 @@ type DevelopedTech_03 struct {
 }
 
 func (s *DevelopedTech_03) String() string {
-	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템\n "
+	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템"
 }
 
 // 4번
@@ -89,7 +89,7 @@ type DevelopedTech_04 struct {
 }
 
 func (s *DevelopedTech_04) String() string {
-	return "4. 블록체인 기 코로나19 백신 접종 확인 시스템 "
+	return "4. 블록체인 기반 코로나19 백신 접종 확인 시스템"
 }
 
 func main() {
@@ -110,3 +110,6 @@ func main() {
 	fmt.Println(Platform)
 	fmt.Println("")
 }
+
+
+// 현 version에서 \n을 통한 정렬을 시도했으나 저장, 빌드 실행시마다 간헐적인 문자 삭제 문제가 발생중
