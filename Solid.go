@@ -1,5 +1,5 @@
 // SOLID(객체지향설계) : 객체지향 프로그래밍 및 설계의 다섯가지 기본원칙 5원칙
-// K-Technology Exchange
+// goBlock-Technology Exchange
 
 package main
 
@@ -44,10 +44,10 @@ type DevelopedTech_01 struct {
 }
 
 func (s *DevelopedTech_01) String() string {
-	return "  1. DID 비대칭키기술을 활용한 신원증명\n  "
+	return "  1. 영지식 증명을 활용한 블라인드 전자계약서\n  "
 }
 
-// 2번이 핵심기술이라면 소문자로해서 내부 기능으로 돌리기.(개방폐쇄원칙)
+// 2번 외부 공개가 꺼려지는 핵심기술은 내부 기능으로 돌려서 보안 유지(개방폐쇄원칙)
 type tech_02 struct {
 }
 
@@ -59,7 +59,7 @@ type Developedtech_02 struct {
 }
 
 func (s *Developedtech_02) String() string {
-	return " 2. Blinded AIValidator#1\n   "
+	return " 2. Blinded Technology #1\n   "
 }
 
 // 3번
@@ -89,7 +89,7 @@ type DevelopedTech_04 struct {
 }
 
 func (s *DevelopedTech_04) String() string {
-	return "4. 블록체인 기반 코로나19 백신 접종 확인 시스템"
+	return "4. 영지식 증명 기반 투개표 시스템"
 }
 
 /////////////////////////////////////////////////
@@ -127,7 +127,7 @@ type V_DevelopedTech_01 struct {
 }
 
 func (s *V_DevelopedTech_01) String() string {
-	return "  1. 스텔라 합의 알고리즘\n  "
+	return "  1. 블록체인 기반 코로나19 백신 접종 증명시스템\n  "
 }
 
 // 2번
@@ -142,7 +142,37 @@ type V_DevelopedTech_02 struct {
 }
 
 func (s *V_DevelopedTech_02) String() string {
-	return " 2. 알고랜드 합의 알고리즘\n  "
+	return " 2. DID 비대칭키기술을 활용한 신원증명 시스템\n  "
+}
+
+// 3번
+type TradableTech_03 struct {
+}
+
+func (j *TradableTech_03) Trading() ValidatedTech {
+	return &V_DevelopedTech_03{}
+}
+
+type V_DevelopedTech_03 struct {
+}
+
+func (s *V_DevelopedTech_03) String() string {
+	return " 3. 물리적 복제 방지 기능을 가진 난수 발생 장치\n  "
+}
+
+// 4번
+type TradableTech_04 struct {
+}
+
+func (j *TradableTech_04) Trading() ValidatedTech {
+	return &V_DevelopedTech_04{}
+}
+
+type V_DevelopedTech_04 struct {
+}
+
+func (s *V_DevelopedTech_04) String() string {
+	return " 4. 딥러닝을 이용한 선박 충돌 방지 자율회피 시스템\n  "
 }
 
 func main() {
@@ -156,6 +186,8 @@ func main() {
 
 	TradeTechnology01 := &TradableTech_01{}
 	TradeTechnology02 := &TradableTech_02{}
+	TradeTechnology03 := &TradableTech_03{}
+	TradeTechnology04 := &TradableTech_04{}
 
 	ValidateSystem.Item(AIValidator01)
 	ValidateSystem.Item(AIValidator02)
@@ -164,10 +196,15 @@ func main() {
 
 	TradeSystem.TradableItem(TradeTechnology01)
 	TradeSystem.TradableItem(TradeTechnology02)
+	TradeSystem.TradableItem(TradeTechnology03)
+	TradeSystem.TradableItem(TradeTechnology04)
 
-	fmt.Println("----------------Korea Tech Exchange------------------")
+	fmt.Println("--------------------goBlock Tech Exchange----------------------")
 	fmt.Println("")
 	fmt.Println(ValidateSystem)
 	fmt.Println("")
 	fmt.Println(TradeSystem)
+	fmt.Println("")
+	fmt.Println("--------------------goBlock Tech Exchange----------------------")
+
 }
