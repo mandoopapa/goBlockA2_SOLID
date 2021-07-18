@@ -1,5 +1,5 @@
 // SOLID(객체지향설계) : 객체지향 프로그래밍 및 설계의 다섯가지 기본원칙 5원칙
-// goBlock-Technology Exchange
+// Korea-Technology Exchange
 
 package main
 
@@ -12,7 +12,6 @@ type UnvalidatedTech interface {
 	String() string
 }
 
-// 인터페이스 2
 type AIValidator interface {
 	Validating() UnvalidatedTech
 }
@@ -30,9 +29,7 @@ func (s *ValidateSystem) String() string {
 	return "\t [[ A.I 검증중인 기술 목록 ]]\n " + s.val
 }
 
-//////////////////인터페이스 1,2를 활용///////////////////////
-
-// 1번
+// 1번 기술
 type Tech_01 struct {
 }
 
@@ -62,7 +59,7 @@ func (s *Developedtech_02) String() string {
 	return " 2. Blinded Technology #1\n   "
 }
 
-// 3번
+// 3번 기술
 type Tech_03 struct {
 }
 
@@ -74,10 +71,10 @@ type DevelopedTech_03 struct {
 }
 
 func (s *DevelopedTech_03) String() string {
-	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템\n   "
+	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템 <HOT!>\n   "
 }
 
-// 4번
+// 4번 기술
 type Tech_04 struct {
 }
 
@@ -199,12 +196,13 @@ func main() {
 	TradeSystem.TradableItem(TradeTechnology03)
 	TradeSystem.TradableItem(TradeTechnology04)
 
-	fmt.Println("--------------------goBlock Tech Exchange----------------------")
+	fmt.Println("--------------------Korea Tech Exchange----------------------")
 	fmt.Println("")
 	fmt.Println(ValidateSystem)
 	fmt.Println("")
-	fmt.Println(TradeSystem)
+	fmt.Println("--------------------Korea Tech Exchange----------------------")
 	fmt.Println("")
-	fmt.Println("--------------------goBlock Tech Exchange----------------------")
+	fmt.Println(TradeSystem)
+	fmt.Println("--------------------Korea Tech Exchange----------------------")
 
 }
