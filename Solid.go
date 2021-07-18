@@ -7,27 +7,27 @@ import (
 	"fmt"
 )
 
-// 인터페이스 1. Seller, Dealer, Buyer를 Person으로 단일책임
-type Person interface {
+// 인터페이스 1. Seller, Dealer, Buyer를 UnvalidatedTeh으로 단일책임
+type UnvalidatedTech interface {
 	String() string
 }
 
 // 인터페이스 2
-type Technology interface {
-	Validating() Person
+type AIValidator interface {
+	Validating() UnvalidatedTech
 }
 
-type Platform struct {
+type ValidateSystem struct {
 	val string
 }
 
-func (s *Platform) Item(Technology Technology) {
-	pickit := Technology.Validating()
+func (s *ValidateSystem) Item(AIValidator AIValidator) {
+	pickit := AIValidator.Validating()
 	s.val += pickit.String()
 }
 
-func (s *Platform) String() string {
-	return "\t [[ 기술거래가능 목록 ]]\n " + s.val
+func (s *ValidateSystem) String() string {
+	return "\t [[ A.I 검증중인 기술 목록 ]]\n " + s.val
 }
 
 //////////////////인터페이스 1,2를 활용///////////////////////
@@ -36,7 +36,7 @@ func (s *Platform) String() string {
 type Tech_01 struct {
 }
 
-func (j *Tech_01) Validating() Person {
+func (j *Tech_01) Validating() UnvalidatedTech {
 	return &DevelopedTech_01{}
 }
 
@@ -44,14 +44,14 @@ type DevelopedTech_01 struct {
 }
 
 func (s *DevelopedTech_01) String() string {
-	return "1. DID 비대칭키기술을 활용한 신원증"
+	return "  1. DID 비대칭키기술을 활용한 신원증명\n  "
 }
 
 // 2번이 핵심기술이라면 소문자로해서 내부 기능으로 돌리기.(개방폐쇄원칙)
 type tech_02 struct {
 }
 
-func (j *tech_02) Validating() Person {
+func (j *tech_02) Validating() UnvalidatedTech {
 	return &Developedtech_02{}
 }
 
@@ -59,14 +59,14 @@ type Developedtech_02 struct {
 }
 
 func (s *Developedtech_02) String() string {
-	return "2. Blinded Technology#1"
+	return " 2. Blinded AIValidator#1\n   "
 }
 
 // 3번
 type Tech_03 struct {
 }
 
-func (j *Tech_03) Validating() Person {
+func (j *Tech_03) Validating() UnvalidatedTech {
 	return &DevelopedTech_03{}
 }
 
@@ -74,14 +74,14 @@ type DevelopedTech_03 struct {
 }
 
 func (s *DevelopedTech_03) String() string {
-	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템"
+	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템\n   "
 }
 
 // 4번
 type Tech_04 struct {
 }
 
-func (j *Tech_04) Validating() Person {
+func (j *Tech_04) Validating() UnvalidatedTech {
 	return &DevelopedTech_04{}
 }
 
@@ -92,24 +92,82 @@ func (s *DevelopedTech_04) String() string {
 	return "4. 블록체인 기반 코로나19 백신 접종 확인 시스템"
 }
 
+/////////////////////////////////////////////////
+
+type ValidatedTech interface {
+	String() string
+}
+
+type KTexchange interface {
+	Trading() ValidatedTech
+}
+
+type TradeSystem struct {
+	val string
+}
+
+func (s *TradeSystem) TradableItem(KTexchange KTexchange) {
+	tradeit := KTexchange.Trading()
+	s.val += tradeit.String()
+}
+
+func (s *TradeSystem) String() string {
+	return "\t [[ A.I 검증 완료된 거래가능 기술 목록 ]]\n " + s.val
+}
+
+// 1번
+type TradableTech_01 struct {
+}
+
+func (j *TradableTech_01) Trading() ValidatedTech {
+	return &V_DevelopedTech_01{}
+}
+
+type V_DevelopedTech_01 struct {
+}
+
+func (s *V_DevelopedTech_01) String() string {
+	return "  1. 스텔라 합의 알고리즘\n  "
+}
+
+// 2번
+type TradableTech_02 struct {
+}
+
+func (j *TradableTech_02) Trading() ValidatedTech {
+	return &V_DevelopedTech_02{}
+}
+
+type V_DevelopedTech_02 struct {
+}
+
+func (s *V_DevelopedTech_02) String() string {
+	return " 2. 알고랜드 합의 알고리즘\n  "
+}
+
 func main() {
-	Platform := &Platform{}
+	ValidateSystem := &ValidateSystem{}
+	TradeSystem := &TradeSystem{}
 
-	Technology01 := &Tech_01{}
-	Technology02 := &tech_02{}
-	Technology03 := &Tech_03{}
-	Technology04 := &Tech_04{}
+	AIValidator01 := &Tech_01{}
+	AIValidator02 := &tech_02{}
+	AIValidator03 := &Tech_03{}
+	AIValidator04 := &Tech_04{}
 
-	Platform.Item(Technology01)
-	Platform.Item(Technology02)
-	Platform.Item(Technology03)
-	Platform.Item(Technology04)
+	TradeTechnology01 := &TradableTech_01{}
+	TradeTechnology02 := &TradableTech_02{}
+
+	ValidateSystem.Item(AIValidator01)
+	ValidateSystem.Item(AIValidator02)
+	ValidateSystem.Item(AIValidator03)
+	ValidateSystem.Item(AIValidator04)
+
+	TradeSystem.TradableItem(TradeTechnology01)
+	TradeSystem.TradableItem(TradeTechnology02)
 
 	fmt.Println("----------------Korea Tech Exchange------------------")
 	fmt.Println("")
-	fmt.Println(Platform)
+	fmt.Println(ValidateSystem)
 	fmt.Println("")
+	fmt.Println(TradeSystem)
 }
-
-
-// 현 version에서 \n을 통한 정렬을 시도했으나 저장, 빌드 실행시마다 간헐적인 문자 삭제 문제가 발생중
