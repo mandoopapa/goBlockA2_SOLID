@@ -4,6 +4,8 @@
 ### 우리의 목표는 goBlock Tech Exchange의 ProtoType을 GO Lang으로 구현하는거에요.
 ### 많은 Code Review를 부탁드려요.
 
-##### Contributor : [팀원별 깃허브 주소를 쓸 자리에요]
+##### Contributor
+##### goBlock A2 Team
+
 
 ##### 코로나로부터 안전하시길 기원해요.
