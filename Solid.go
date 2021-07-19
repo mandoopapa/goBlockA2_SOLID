@@ -90,7 +90,21 @@ type DevelopedTech_04 struct {
 }
 
 func (s *DevelopedTech_04) String() string {
-	return "4. 영지식 증명 기반 투개표 시스템"
+	return "4. 영지식 증명 기반 투개표 시스템\n   "
+}
+
+type Tech_05 struct {
+}
+
+func (j *Tech_05) Validating() UnvalidatedTech {
+	return &DevelopedTech_05{}
+}
+
+type DevelopedTech_05 struct {
+}
+
+func (s *DevelopedTech_05) String() string {
+	return "5. 딥러닝 기반 방사선 피폭 진단용 염색체 판독 시스템"
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -179,6 +193,21 @@ func (s *V_DevelopedTech_04) String() string {
 	return " 4. 딥러닝을 이용한 선박 충돌 방지 자율회피 시스템\n  "
 }
 
+// A.I 검증이 완료된 5번 기술
+type TradableTech_05 struct {
+}
+
+func (j *TradableTech_05) Trading() ValidatedTech {
+	return &V_DevelopedTech_05{}
+}
+
+type V_DevelopedTech_05 struct {
+}
+
+func (s *V_DevelopedTech_05) String() string {
+	return " 5. 퍼블릭 블록체인 환경에서 개인정보보호를 위한 거래방법\n  "
+}
+
 func main() {
 	// 검증시스템과 거래시스템을 정의합니다.
 	ValidateSystem := &ValidateSystem{}
@@ -189,22 +218,26 @@ func main() {
 	AIValidator02 := &tech_02{}
 	AIValidator03 := &Tech_03{}
 	AIValidator04 := &Tech_04{}
+	AIValidator05 := &Tech_05{}
 
 	ValidateSystem.Input_data(AIValidator01)
 	ValidateSystem.Input_data(AIValidator02)
 	ValidateSystem.Input_data(AIValidator03)
 	ValidateSystem.Input_data(AIValidator04)
+	ValidateSystem.Input_data(AIValidator05)
 
 	// A.I 검증완료된 기술들을 거래가능 목록으로 나타내도록 합니다.
 	TradeTechnology01 := &TradableTech_01{}
 	TradeTechnology02 := &TradableTech_02{}
 	TradeTechnology03 := &TradableTech_03{}
 	TradeTechnology04 := &TradableTech_04{}
+	TradeTechnology05 := &TradableTech_05{}
 
 	TradeSystem.TradableInput_data(TradeTechnology01)
 	TradeSystem.TradableInput_data(TradeTechnology02)
 	TradeSystem.TradableInput_data(TradeTechnology03)
 	TradeSystem.TradableInput_data(TradeTechnology04)
+	TradeSystem.TradableInput_data(TradeTechnology05)
 
 	// 최종 출력본을 정리합니다.
 	fmt.Println("--------------------  K-TBA Platform  ----------------------")
