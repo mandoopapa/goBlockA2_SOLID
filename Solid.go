@@ -208,6 +208,36 @@ func (s *V_DevelopedTech_05) String() string {
 	return " 5. 퍼블릭 블록체인 환경에서 개인정보보호를 위한 거래방법\n  "
 }
 
+// A.I 검증이 완료된 5번 기술
+type TradableTech_06 struct {
+}
+
+func (j *TradableTech_06) Trading() ValidatedTech {
+	return &V_DevelopedTech_06{}
+}
+
+type V_DevelopedTech_06 struct {
+}
+
+func (s *V_DevelopedTech_06) String() string {
+	return " 6. 온라인 학습 환경에서 학습자의 시각 행동을 활용한 학습 유형 진단 장치 \n  "
+}
+
+// A.I 검증이 완료된 5번 기술
+type TradableTech_07 struct {
+}
+
+func (j *TradableTech_07) Trading() ValidatedTech {
+	return &V_DevelopedTech_07{}
+}
+
+type V_DevelopedTech_07 struct {
+}
+
+func (s *V_DevelopedTech_07) String() string {
+	return " 7. 해양 부유물 수거용 무인로봇 <<기술나눔>>\n  "
+}
+
 func main() {
 	// 검증시스템과 거래시스템을 정의합니다.
 	ValidateSystem := &ValidateSystem{}
@@ -232,20 +262,28 @@ func main() {
 	TradeTechnology03 := &TradableTech_03{}
 	TradeTechnology04 := &TradableTech_04{}
 	TradeTechnology05 := &TradableTech_05{}
+	TradeTechnology06 := &TradableTech_06{}
+	TradeTechnology07 := &TradableTech_07{}
 
 	TradeSystem.TradableInput_data(TradeTechnology01)
 	TradeSystem.TradableInput_data(TradeTechnology02)
 	TradeSystem.TradableInput_data(TradeTechnology03)
 	TradeSystem.TradableInput_data(TradeTechnology04)
 	TradeSystem.TradableInput_data(TradeTechnology05)
+	TradeSystem.TradableInput_data(TradeTechnology06)
+	TradeSystem.TradableInput_data(TradeTechnology07)
 
 	// 최종 출력본을 정리합니다.
 	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 	fmt.Println("")
 	fmt.Println(ValidateSystem)
 	fmt.Println("")
-	fmt.Println("--------------------  K-TBA Platform  ----------------------")
+	fmt.Println("------------------------------------------------------------")
 	fmt.Println("")
 	fmt.Println(TradeSystem)
+	fmt.Println("------------------------------------------------------------")
+	fmt.Println("--------- 기술을 선택하시면 추가 상세정보를 확인하실 수 있습니다 ---------")
+	fmt.Println("------------------------------------------------------------")
+	fmt.Println("")
 	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 }
