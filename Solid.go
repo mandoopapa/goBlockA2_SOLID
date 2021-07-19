@@ -196,13 +196,12 @@ func main() {
 	TradeSystem.TradableInput_data(TradeTechnology03)
 	TradeSystem.TradableInput_data(TradeTechnology04)
 
-	fmt.Println("--------------------Korea Tech Exchange----------------------")
+	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 	fmt.Println("")
 	fmt.Println(ValidateSystem)
 	fmt.Println("")
-	fmt.Println("--------------------Korea Tech Exchange----------------------")
+	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 	fmt.Println("")
 	fmt.Println(TradeSystem)
-	fmt.Println("--------------------Korea Tech Exchange----------------------")
-
+	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 }
