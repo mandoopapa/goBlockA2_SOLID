@@ -1,5 +1,5 @@
 // SOLID(객체지향설계) : 객체지향 프로그래밍 및 설계의 다섯가지 기본원칙 5원칙
-// Korea-Technology Exchange
+// Korea-Technology Exchange Blockchain A.I Agent
 
 package main
 
@@ -7,24 +7,28 @@ import (
 	"fmt"
 )
 
-// 인터페이스 1. Seller, Dealer, Buyer를 UnvalidatedTeh으로 단일책임
+// 인터페이스 1. 아직 A.I 검증되지 않은 기술에 대한 검증을 준비합니다.
 type UnvalidatedTech interface {
 	String() string
 }
 
+// AIValidator가 UnvalidatedTechnology를 Validating할 수 있도록 인터페이스를 구성해줍니다.
 type AIValidator interface {
 	Validating() UnvalidatedTech
 }
 
+// 일련의 과정을 책임지는 시스템을 ValidateSystem으로 나타냅니다.
 type ValidateSystem struct {
 	val string
 }
 
+// Input_data를 통해 ValidateSystem을 사용합니다.
 func (s *ValidateSystem) Input_data(AIValidator AIValidator) {
-	pickit := AIValidator.Validating()
-	s.val += pickit.String()
+	validate := AIValidator.Validating()
+	s.val += validate.String()
 }
 
+// ValidateSystem은 현재 A.I검증중인 기술 목록을 아래와 같이 출력합니다
 func (s *ValidateSystem) String() string {
 	return "\t [[ A.I 검증중인 기술 목록 ]]\n " + s.val
 }
@@ -44,7 +48,7 @@ func (s *DevelopedTech_01) String() string {
 	return "  1. 영지식 증명을 활용한 블라인드 전자계약서\n  "
 }
 
-// 2번 외부 공개가 꺼려지는 핵심기술은 내부 기능으로 돌려서 보안 유지(개방폐쇄원칙)
+// 2번 외부 공개가 꺼려지는 핵심기술은 내부 기능으로 돌려서 보안을 유지합니다. (개방폐쇄원칙)
 type tech_02 struct {
 }
 
@@ -71,7 +75,7 @@ type DevelopedTech_03 struct {
 }
 
 func (s *DevelopedTech_03) String() string {
-	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템 <HOT!>\n   "
+	return "3. PoDC 합알고리즘을 활용한 블록체인 기반 전자투표 시스템 <<HOT!>>\n   "
 }
 
 // 4번 기술
@@ -89,22 +93,25 @@ func (s *DevelopedTech_04) String() string {
 	return "4. 영지식 증명 기반 투개표 시스템"
 }
 
-/////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
+// 인터페이스 3. A.I 검증이 완료된 기술을 나타냅니다.
 type ValidatedTech interface {
 	String() string
 }
 
-type KTexchange interface {
+// 인터페이스 4. 검증이 완료된 기술을 K_TBA를 통해 거래가능한 목록에 올라갑니다.
+type K_TBA interface {
 	Trading() ValidatedTech
 }
 
+// TradeSystem을 준비합니다
 type TradeSystem struct {
 	val string
 }
 
-func (s *TradeSystem) TradableInput_data(KTexchange KTexchange) {
-	tradeit := KTexchange.Trading()
+func (s *TradeSystem) TradableInput_data(K_TBA K_TBA) {
+	tradeit := K_TBA.Trading()
 	s.val += tradeit.String()
 }
 
@@ -112,7 +119,7 @@ func (s *TradeSystem) String() string {
 	return "\t [[ A.I 검증 완료된 거래가능 기술 목록 ]]\n " + s.val
 }
 
-// 1번
+// A.I 검증이 완료된 1번 기술
 type TradableTech_01 struct {
 }
 
@@ -127,7 +134,7 @@ func (s *V_DevelopedTech_01) String() string {
 	return "  1. 블록체인 기반 코로나19 백신 접종 증명시스템\n  "
 }
 
-// 2번
+// A.I 검증이 완료된 2번 기술
 type TradableTech_02 struct {
 }
 
@@ -142,7 +149,7 @@ func (s *V_DevelopedTech_02) String() string {
 	return " 2. DID 비대칭키기술을 활용한 신원증명 시스템\n  "
 }
 
-// 3번
+// A.I 검증이 완료된 3번 기술
 type TradableTech_03 struct {
 }
 
@@ -157,7 +164,7 @@ func (s *V_DevelopedTech_03) String() string {
 	return " 3. 물리적 복제 방지 기능을 가진 난수 발생 장치\n  "
 }
 
-// 4번
+// A.I 검증이 완료된 4번 기술
 type TradableTech_04 struct {
 }
 
@@ -173,29 +180,33 @@ func (s *V_DevelopedTech_04) String() string {
 }
 
 func main() {
+	// 검증시스템과 거래시스템을 정의합니다.
 	ValidateSystem := &ValidateSystem{}
 	TradeSystem := &TradeSystem{}
 
+	// A.I Validator가 각각의 기술들을 검증합니다.
 	AIValidator01 := &Tech_01{}
 	AIValidator02 := &tech_02{}
 	AIValidator03 := &Tech_03{}
 	AIValidator04 := &Tech_04{}
-
-	TradeTechnology01 := &TradableTech_01{}
-	TradeTechnology02 := &TradableTech_02{}
-	TradeTechnology03 := &TradableTech_03{}
-	TradeTechnology04 := &TradableTech_04{}
 
 	ValidateSystem.Input_data(AIValidator01)
 	ValidateSystem.Input_data(AIValidator02)
 	ValidateSystem.Input_data(AIValidator03)
 	ValidateSystem.Input_data(AIValidator04)
 
+	// A.I 검증완료된 기술들을 거래가능 목록으로 나타내도록 합니다.
+	TradeTechnology01 := &TradableTech_01{}
+	TradeTechnology02 := &TradableTech_02{}
+	TradeTechnology03 := &TradableTech_03{}
+	TradeTechnology04 := &TradableTech_04{}
+
 	TradeSystem.TradableInput_data(TradeTechnology01)
 	TradeSystem.TradableInput_data(TradeTechnology02)
 	TradeSystem.TradableInput_data(TradeTechnology03)
 	TradeSystem.TradableInput_data(TradeTechnology04)
 
+	// 최종 출력본을 정리합니다.
 	fmt.Println("--------------------  K-TBA Platform  ----------------------")
 	fmt.Println("")
 	fmt.Println(ValidateSystem)
