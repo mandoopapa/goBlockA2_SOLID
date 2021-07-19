@@ -7,4 +7,4 @@
 
 ### Contributors
 ##### goBlock A2 Team
-##### <a href="https://github.com/KimDong-Han"> <img src="https://contrib.rocks/image?repo=KimDong-Han/memoApp"/></a> <a href="https://github.com/JeonghyeonJeon"><img src="https://contrib.rocks/image?repo=JeonghyeonJeon/webapp"/></a><a href="https://github.com/shtjrdnjs02"><img src="https://contrib.rocks/image?repo=shtjrdnjs02/gitTest"></a>
+##### <a href="https://github.com/KimDong-Han"> <img src="https://contrib.rocks/image?repo=KimDong-Han/memoApp"/></a> <a href="https://github.com/JeonghyeonJeon"><img src="https://contrib.rocks/image?repo=JeonghyeonJeon/webapp"/></a> <a href="https://github.com/shtjrdnjs02"><img src="https://contrib.rocks/image?repo=shtjrdnjs02/gitTest"></a>
