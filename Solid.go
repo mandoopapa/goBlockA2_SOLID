@@ -20,7 +20,7 @@ type ValidateSystem struct {
 	val string
 }
 
-func (s *ValidateSystem) Item(AIValidator AIValidator) {
+func (s *ValidateSystem) Input_data(AIValidator AIValidator) {
 	pickit := AIValidator.Validating()
 	s.val += pickit.String()
 }
@@ -103,7 +103,7 @@ type TradeSystem struct {
 	val string
 }
 
-func (s *TradeSystem) TradableItem(KTexchange KTexchange) {
+func (s *TradeSystem) TradableInput_data(KTexchange KTexchange) {
 	tradeit := KTexchange.Trading()
 	s.val += tradeit.String()
 }
@@ -186,15 +186,15 @@ func main() {
 	TradeTechnology03 := &TradableTech_03{}
 	TradeTechnology04 := &TradableTech_04{}
 
-	ValidateSystem.Item(AIValidator01)
-	ValidateSystem.Item(AIValidator02)
-	ValidateSystem.Item(AIValidator03)
-	ValidateSystem.Item(AIValidator04)
+	ValidateSystem.Input_data(AIValidator01)
+	ValidateSystem.Input_data(AIValidator02)
+	ValidateSystem.Input_data(AIValidator03)
+	ValidateSystem.Input_data(AIValidator04)
 
-	TradeSystem.TradableItem(TradeTechnology01)
-	TradeSystem.TradableItem(TradeTechnology02)
-	TradeSystem.TradableItem(TradeTechnology03)
-	TradeSystem.TradableItem(TradeTechnology04)
+	TradeSystem.TradableInput_data(TradeTechnology01)
+	TradeSystem.TradableInput_data(TradeTechnology02)
+	TradeSystem.TradableInput_data(TradeTechnology03)
+	TradeSystem.TradableInput_data(TradeTechnology04)
 
 	fmt.Println("--------------------Korea Tech Exchange----------------------")
 	fmt.Println("")
